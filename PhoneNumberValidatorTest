@@ -1,0 +1,24 @@
+@isTest
+private class PhoneNumberValidatorTest {
+    @isTest
+    static void testValidPhoneNumber() {
+        String validPhoneNumber = '1234567890';
+        Boolean isValid = PhoneNumberValidator.isValidPhoneNumber(validPhoneNumber);
+        System.assert(isValid, 'Valid phone number should be valid');
+    }
+
+    @isTest
+    static void testInvalidPhoneNumber() {
+        String invalidPhoneNumber = '12345';
+        Boolean isValid = PhoneNumberValidator.isValidPhoneNumber(invalidPhoneNumber);
+        System.assert(!isValid, 'Invalid phone number should not be valid');
+
+        invalidPhoneNumber = '12345678901';
+        isValid = PhoneNumberValidator.isValidPhoneNumber(invalidPhoneNumber);
+        System.assert(!isValid, 'Invalid phone number should not be valid');
+
+        invalidPhoneNumber = 'abc1234567';
+        isValid = PhoneNumberValidator.isValidPhoneNumber(invalidPhoneNumber);
+        System.assert(!isValid, 'Invalid phone number should not be valid');
+    }
+}
