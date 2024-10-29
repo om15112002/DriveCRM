@@ -1,0 +1,13 @@
+public class PhoneNumberValidator {
+    public static Boolean isValidPhoneNumber(String phoneNumber) {
+        if (String.isBlank(phoneNumber)) {
+            return false;
+        }
+
+        // Remove any non-numeric characters
+        String cleanedPhoneNumber = phoneNumber.replaceAll('[^0-9]', '');
+
+        // Check if the cleaned phone number is exactly 10 digits long
+        return cleanedPhoneNumber.length() == 10;
+    }
+}
