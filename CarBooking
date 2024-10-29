@@ -1,0 +1,10 @@
+trigger carbooking on car_booking__c (After insert, after update) {
+     if(trigger.isAfter && ( trigger.isInsert || trigger.isupdate))
+
+    {
+
+    carbookinghandler.sendEmailNotification(trigger.new);
+
+        }
+
+}
